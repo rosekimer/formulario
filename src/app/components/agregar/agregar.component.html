@@ -1,0 +1,33 @@
+<div class="container-fluid m-5">
+  <div class="row">
+    <div class="col-md-6">
+        <div  *ngIf="!datosSudmid">
+            <div class="form-group">
+                <label for="titulo">Titulo:</label>
+                <input type="text" name="titulo" id="titulo"
+                class="form-control" [(ngModel)]="libro.titulo" >
+            </div>
+            <div class="form-group">
+                <label for="titulo">Descripcion:</label>
+                <input type="text" name="descripcion" id="descripcion"
+                class="form-control" [(ngModel)]="libro.descripcion" >
+            </div>
+            <div class="form-group">
+              <label for="titulo">solicitud:</label>
+              <input type="text" name="solicitud" id="solicitud"
+              class="form-control" [(ngModel)]="libro.solicitud" >
+          </div>
+        </div>
+        <button  class="btn btn-success mt-5"  (click)="guardarLibros()">Crear libro</button>
+    </div>
+    <div class="col-md-6">
+      <div class="img">
+        <img src="https://tiposdetexto.org/wp-content/uploads/2020/05/formulario.png" alt="">
+      </div>
+    </div>
+          <div *ngIf="datosSudmid">
+              <h4> Los datos fueron guardados con exito!</h4>
+              <button class="btn btn-primary" (click)="nuevolibro()">Crear Nuevo Libro </button>
+          </div>
+  </div>
+</div>
